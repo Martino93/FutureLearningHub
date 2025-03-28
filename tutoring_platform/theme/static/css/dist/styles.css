@@ -990,6 +990,11 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .text-center {
   text-align: center;
 }
