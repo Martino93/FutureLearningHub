@@ -8,3 +8,18 @@ def landing_page(request):
         'tutors': tutors,
         'testimonials': testimonials
     })
+    
+    
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        send_mail(
+            f"Message from {name}",
+            message,
+            email,
+            ['your-email@example.com'],  # Replace with your email
+        )
+        return redirect('landing_page')  # Redirect to the landing page after submission
+    return render(request, 'core/contact.html')  # Optional: Render a separate contact page if needed
