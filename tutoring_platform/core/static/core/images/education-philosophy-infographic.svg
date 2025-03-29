@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3" />
+    </filter>
+    
+    <!-- Glow effect for central circle -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Header -->
+  <rect x="100" y="40" width="600" height="70" rx="8" fill="#1a73e8" filter="url(#dropShadow)"/>
+  <text x="400" y="85" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="600" text-anchor="middle" fill="white">FUTURE-READY EDUCATION PHILOSOPHY</text>
+  
+  <!-- Connecting lines - placed below circles for better layering -->
+  <line x1="278" y1="216" x2="340" y2="260" stroke="#e74c3c" stroke-width="2.5" stroke-opacity="0.7"/>
+  <line x1="522" y1="216" x2="460" y2="260" stroke="#2ecc71" stroke-width="2.5" stroke-opacity="0.7"/>
+  <line x1="278" y1="384" x2="340" y2="340" stroke="#9b59b6" stroke-width="2.5" stroke-opacity="0.7"/>
+  <line x1="522" y1="384" x2="460" y2="340" stroke="#f39c12" stroke-width="2.5" stroke-opacity="0.7"/>
+  
+  <!-- Center core circle with glow -->
+  <circle cx="400" cy="300" r="90" fill="#2c3e50" opacity="0.85" filter="url(#glow)"/>
+  <text x="400" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle" fill="white">PERSONALIZED</text>
+  <text x="400" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle" fill="white">LEARNING</text>
+  
+  <!-- Outer pillars with cleaner design -->
+  <!-- Pillar 1 -->
+  <circle cx="240" cy="180" r="65" fill="#e74c3c" opacity="0.85" filter="url(#dropShadow)"/>
+  <text x="240" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">FUTURE-READY</text>
+  <text x="240" y="200" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">SKILLS</text>
+  
+  <!-- Pillar 2 -->
+  <circle cx="560" cy="180" r="65" fill="#2ecc71" opacity="0.85" filter="url(#dropShadow)"/>
+  <text x="560" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">TECH</text>
+  <text x="560" y="200" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">INTEGRATION</text>
+  
+  <!-- Pillar 3 -->
+  <circle cx="240" cy="420" r="65" fill="#9b59b6" opacity="0.85" filter="url(#dropShadow)"/>
+  <text x="240" y="415" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">AGENCY</text>
+  <text x="240" y="440" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">DEVELOPMENT</text>
+  
+  <!-- Pillar 4 -->
+  <circle cx="560" cy="420" r="65" fill="#f39c12" opacity="0.85" filter="url(#dropShadow)"/>
+  <text x="560" y="415" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">RESULTS</text>
+  <text x="560" y="440" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="white">DRIVEN</text>
+  
+  <!-- Detail boxes with improved styling -->
+  <!-- Future Skills details -->
+  <rect x="70" y="170" width="130" height="185" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="135" y="195" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Critical Thinking</text>
+  <text x="135" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Adaptability</text>
+  <text x="135" y="245" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Digital Fluency</text>
+  <text x="135" y="270" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Complex Problem</text>
+  <text x="135" y="285" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Solving</text>
+  <text x="135" y="310" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Collaboration</text>
+  <text x="135" y="335" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Ethical Reasoning</text>
+  
+  <!-- Tech Integration details -->
+  <rect x="600" y="170" width="130" height="185" rx="8" fill="#2ecc71" fill-opacity="0.08" stroke="#2ecc71" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="665" y="195" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">AI Diagnostics</text>
+  <text x="665" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Gamified Learning</text>
+  <text x="665" y="245" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Adaptive Content</text>
+  <text x="665" y="270" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Data-Driven</text>
+  <text x="665" y="285" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Insights</text>
+  <text x="665" y="310" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Virtual Learning</text>
+  <text x="665" y="335" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Human-Tech Balance</text>
+  
+  <!-- Agency Development details -->
+  <rect x="70" y="410" width="130" height="185" rx="8" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="135" y="435" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Self-Direction</text>
+  <text x="135" y="460" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Goal Setting</text>
+  <text x="135" y="485" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Metacognition</text>
+  <text x="135" y="510" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Intrinsic</text>
+  <text x="135" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Motivation</text>
+  <text x="135" y="550" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Executive Function</text>
+  <text x="135" y="575" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Self-Advocacy</text>
+  
+  <!-- Results Driven details -->
+  <rect x="600" y="410" width="130" height="185" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="665" y="435" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Competency Based</text>
+  <text x="665" y="460" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Measurable Growth</text>
+  <text x="665" y="485" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Real-World</text>
+  <text x="665" y="500" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Application</text>
+  <text x="665" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Continuous</text>
+  <text x="665" y="540" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Feedback Loops</text>
+  <text x="665" y="565" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Evidence-Based</text>
+  <text x="665" y="580" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Methods</text>
+  
+  <!-- Center Circle Personalization Details -->
+  <rect x="310" y="160" width="180" height="70" rx="8" fill="#2c3e50" fill-opacity="0.08" stroke="#2c3e50" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="400" y="180" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Tailored Learning Paths</text>
+  <text x="400" y="205" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Individual Pace &amp; Style</text>
+  <text x="400" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#333">Interest-Driven Content</text>
+  
+  <!-- Quote Box with softer edges -->
+  <rect x="310" y="370" width="180" height="70" rx="8" fill="#2c3e50" fill-opacity="0.08" stroke="#2c3e50" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="400" y="395" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#333">"Preparing students not just</text>
+  <text x="400" y="415" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#333">for the jobs of tomorrow,</text>
+  <text x="400" y="435" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#333">but for creating the future."</text>
+  
+  <!-- Footer with modern styling -->
+  <rect x="200" y="550" width="400" height="30" rx="5" fill="#1a73e8" filter="url(#dropShadow)"/>
+  <text x="400" y="570" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="white">UNLOCKING POTENTIAL • BUILDING TOMORROW</text>
+</svg>

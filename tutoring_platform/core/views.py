@@ -23,3 +23,7 @@ def contact(request):
         )
         return redirect('landing_page')  # Redirect to the landing page after submission
     return render(request, 'core/contact.html')  # Optional: Render a separate contact page if needed
+
+
+def services(request):
+    return render(request, 'core/services.html')
