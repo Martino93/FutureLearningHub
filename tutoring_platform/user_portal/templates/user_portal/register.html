@@ -1,0 +1,27 @@
+<form id="registration-form" class="space-y-4">
+    <input type="email" name="email" placeholder="Email" class="border p-2 w-full" required />
+    <input type="password" name="password" placeholder="Password" class="border p-2 w-full" required />
+    <input type="text" name="registration_code" placeholder="Registration Code" class="border p-2 w-full" required />
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Register</button>
+</form>
+
+<script>
+    document.getElementById("registration-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch("/user_portal/register/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert("Registration successful!");
+        } else {
+            alert(result.error);
+        }
+    });
+</script>

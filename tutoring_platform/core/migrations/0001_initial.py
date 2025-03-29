@@ -7,26 +7,41 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Testimonial',
+            name="Testimonial",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quote', models.TextField()),
-                ('author', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quote", models.TextField()),
+                ("author", models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
-            name='Tutor',
+            name="Tutor",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('subject', models.CharField(max_length=100)),
-                ('bio', models.TextField()),
-                ('image', models.ImageField(upload_to='tutors/')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("subject", models.CharField(max_length=100)),
+                ("bio", models.TextField()),
+                ("image", models.ImageField(upload_to="tutors/")),
             ],
         ),
     ]
