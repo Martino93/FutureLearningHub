@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'theme',
-    'core'
+    'core',
+    'user_portal',
 ]
 
 MIDDLEWARE = [

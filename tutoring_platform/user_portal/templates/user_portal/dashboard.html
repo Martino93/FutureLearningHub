@@ -1,0 +1,41 @@
+<!-- filepath: c:\Users\Hamed\Documents\tutoring-platform\FutureLearningHub\tutoring_platform\user_portal\templates\user_portal\dashboard.html -->
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-6 mt-16">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome to the User Dashboard</h1>
+    <p class="text-gray-600 mb-8">Manage your account, track your progress, and access resources all in one place.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Profile Section -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Your Profile</h2>
+            <p class="text-gray-600">Name: John Doe</p>
+            <p class="text-gray-600">Email: john.doe@example.com</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Edit Profile
+            </a>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Your Progress</h2>
+            <p class="text-gray-600">Courses Completed: 3</p>
+            <p class="text-gray-600">Current Course: Python for Beginners</p>
+            <a href="#" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                View Progress
+            </a>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Resources</h2>
+            <ul class="list-disc list-inside text-gray-600">
+                <li><a href="#" class="text-blue-500 hover:underline">Download Course Materials</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Access Tutorials</a></li>
+                <li><a href="#" class="text-blue-500 hover:underline">Join Community Forum</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

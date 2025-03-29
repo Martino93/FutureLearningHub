@@ -27,3 +27,7 @@ def contact(request):
 
 def services(request):
     return render(request, 'core/services.html')
+
+
+def dashboard(request):
+    return render(request, 'user_portal/dashboard.html')
