@@ -6,6 +6,7 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from .utils import get_supabase_client
 import json
+from django.db import IntegrityError
 
 from .models import Pupil
 
@@ -43,6 +44,13 @@ def register_user(request):
             )
 
             return redirect("/user_portal/login/")
+        except IntegrityError:
+            # Handle unique constraint violation for email
+            return render(
+                request,
+                "user_portal/register.html",
+                {"error_message": "An account with this email already exists"},
+            )
         except ValidationError as e:
             return JsonResponse({"error": str(e)}, status=400)
         except Exception as e:
@@ -60,6 +68,13 @@ def login_user(request):
             email = request.POST.get("email")
             password = request.POST.get("password")
 
+            if not email or not password:
+                return render(
+                    request,
+                    "user_portal/login.html",
+                    {"error_message": "Email and password are required"},
+                )
+
             supabase = get_supabase_client()
 
             # Authenticate the user
@@ -67,12 +82,22 @@ def login_user(request):
                 {"email": email, "password": password}
             )
             if "error" in auth_response:
-                return JsonResponse(
-                    {"error": auth_response["error"]["message"]}, status=400
+                return render(
+                    request,
+                    "user_portal/login.html",
+                    {"error_message": auth_response["error"]["message"]},
                 )
 
             # Redirect to the dashboard on successful login
             return redirect("/user_portal/dashboard/")
         except Exception as e:
-            return JsonResponse({"error": "An unexpected error occurred"}, status=500)
-    return JsonResponse({"error": "Invalid request method"}, status=405)
+            return render(
+                request,
+                "user_portal/login.html",
+                {"error_message": "An unexpected error occurred. Please try again."},
+            )
+    return render(
+        request,
+        "user_portal/login.html",
+        {"error_message": "Invalid request method"},
+    )
