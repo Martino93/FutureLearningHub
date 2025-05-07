@@ -56,3 +56,6 @@ env/
 
 # IDEs
 .idea/
+
+# data
+*load_data/*.json
