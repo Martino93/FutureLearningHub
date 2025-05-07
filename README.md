@@ -5,3 +5,7 @@ This is a draft of a private education platform
 ```bash
 python tutoring_platform/manage.py runserver
 ```
+
+![alt text](image.png)
+
+![alt text](image-1.png)
