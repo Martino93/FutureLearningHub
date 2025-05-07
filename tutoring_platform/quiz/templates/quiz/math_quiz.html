@@ -3,18 +3,29 @@
 {% block content %}
 <div class="container mx-auto py-16">
     <h1 class="text-3xl font-bold mb-6">Math Quiz</h1>
-    {% if question %}
-        <div class="bg-white shadow p-6 rounded-lg">
-            <p class="text-xl mb-4">{{ question.question }}</p>
-            <!-- Optionally, you could add a form or mechanism to reveal/submit an answer -->
-            {% if question.answer %}
-                <details class="mt-4">
-                    <summary class="cursor-pointer text-blue-600">Show Answer</summary>
-                    <p class="mt-2">{{ question.answer }}</p>
-                </details>
-            {% else %}
-                <p class="text-gray-500">No answer provided.</p>
-            {% endif %}
+    {% if questions %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for q in questions %}
+                <div class="bg-white shadow-lg p-6 rounded-lg">
+                    <p class="text-xl font-semibold mb-2">{{ q.question }}</p>
+                    {% if q.options %}
+                        <ul class="mb-4">
+                            {% for option in q.options %}
+                                <li class="mb-1">• {{ option }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if q.rationale %}
+                        <details class="mt-4">
+                            <summary class="cursor-pointer text-blue-600">Show Rationale</summary>
+                            <p class="mt-2 text-gray-700">{{ q.rationale }}</p>
+                        </details>
+                    {% endif %}
+                    <span class="inline-block mt-4 bg-green-100 text-green-800 text-sm px-2 py-1 rounded">
+                        Answer: {{ q.correct }}
+                    </span>
+                </div>
+            {% endfor %}
         </div>
     {% else %}
         <p class="text-gray-600">No quiz questions available yet.</p>

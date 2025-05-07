@@ -1,10 +1,17 @@
+import os
 import random
 from django.shortcuts import render
+from django.conf import settings
+from supabase import create_client, Client
 
 def math_quiz(request):
-    # Using a static quiz question as a mock object.
-    question = {
-        "question": "What is 2 + 2?",
-        "answer": "4"
-    }
-    return render(request, "quiz/math_quiz.html", {"question": question})
+    # Connect to Supabase using credentials from settings
+    supabase_url = os.environ.get("SUPABASE_URL")
+    supabase_key = os.environ.get("SUPABASE_KEY")
+    supabase: Client = create_client(supabase_url, supabase_key)
+    
+    # Retrieve the top 5 rows from your table
+    response = supabase.table("aqua_rat_train").select("*").limit(5).execute()
+    questions = response.data if response.data else []
+    
+    return render(request, "quiz/math_quiz.html", {"questions": questions})
