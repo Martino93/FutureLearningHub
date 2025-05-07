@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-16">
+    <h1 class="text-3xl font-bold mb-6">Math Quiz</h1>
+    {% if question %}
+        <div class="bg-white shadow p-6 rounded-lg">
+            <p class="text-xl mb-4">{{ question.question }}</p>
+            <!-- Optionally, you could add a form or mechanism to reveal/submit an answer -->
+            {% if question.answer %}
+                <details class="mt-4">
+                    <summary class="cursor-pointer text-blue-600">Show Answer</summary>
+                    <p class="mt-2">{{ question.answer }}</p>
+                </details>
+            {% else %}
+                <p class="text-gray-500">No answer provided.</p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p class="text-gray-600">No quiz questions available yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

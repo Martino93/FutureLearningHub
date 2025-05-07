@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls")),
     path("user_portal/", include("user_portal.urls")),
+    path("quiz/", include("quiz.urls")),
 ]
 
 # Serve media files during development

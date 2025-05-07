@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "theme",
     "core",
     "user_portal",
+    "quiz",
 ]
 
 MIDDLEWARE = [
