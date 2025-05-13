@@ -59,3 +59,6 @@ env/
 
 # data
 *load_data/*.json
+*.pkl
+*.csv
+*.txt
