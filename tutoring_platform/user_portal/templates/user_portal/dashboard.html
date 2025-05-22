@@ -1,5 +1,20 @@
-<!-- filepath: c:\Users\Hamed\Documents\tutoring-platform\FutureLearningHub\tutoring_platform\user_portal\templates\user_portal\dashboard.html -->
 {% extends 'core/base.html' %}
+
+{% block navbar %}
+<nav class="bg-gray-800 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-white hover:text-gray-300">Dashboard</a>
+        <ul class="flex space-x-6">
+            <li><a href="#" class="text-lg hover:text-gray-300 transition duration-200">Your Profile</a></li>
+            <li><a href="#" class="text-lg hover:text-gray-300 transition duration-200">Your Progress</a></li>
+            <li><a href="#" class="text-lg hover:text-gray-300 transition duration-200">Resources</a></li>
+        </ul>
+        <a href="#" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-200">
+            Logout
+        </a>
+    </div>
+</nav>
+{% endblock %}
 
 {% block content %}
 <div class="container mx-auto p-6 mt-16">
