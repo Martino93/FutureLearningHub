@@ -8,7 +8,9 @@ from .utils import get_supabase_client
 import json
 from django.db import IntegrityError
 
-from .models import Pupil
+# from .models import Pupil
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 
 def dashboard(request):
@@ -26,7 +28,7 @@ def register_user(request):
             last_name = request.POST.get("last_name")
             email = request.POST.get("email")
             password = request.POST.get("password")
-            registration_code = request.POST.get("registration_code")
+            # registration_code = request.POST.get("registration_code")
 
             # Validate email
             validate_email(email)
@@ -36,12 +38,14 @@ def register_user(request):
                 return JsonResponse({"error": "Password must be at least 8 characters long"}, status=400)
 
             # Save the pupil in the database
-            Pupil.objects.create(
-                first_name=first_name,
-                last_name=last_name,
+            user = User.objects.create_user(
+                username=email,  # or a different unique identifier
                 email=email,
-                registration_code=registration_code,
+                password=password,
+                first_name=first_name,
+                last_name=last_name
             )
+            user.save()
 
             return redirect("/user_portal/login/")
         except IntegrityError:
@@ -63,41 +67,18 @@ def login_user(request):
     if request.method == "GET":
         return render(request, "user_portal/login.html")
     elif request.method == "POST":
-        try:
-            # Extract data from POST request
-            email = request.POST.get("email")
-            password = request.POST.get("password")
-
-            if not email or not password:
-                return render(
-                    request,
-                    "user_portal/login.html",
-                    {"error_message": "Email and password are required"},
-                )
-
-            supabase = get_supabase_client()
-
-            # Authenticate the user
-            auth_response = supabase.auth.sign_in_with_password(
-                {"email": email, "password": password}
-            )
-            if "error" in auth_response:
-                return render(
-                    request,
-                    "user_portal/login.html",
-                    {"error_message": auth_response["error"]["message"]},
-                )
-
-            # Redirect to the dashboard on successful login
-            return redirect("/user_portal/dashboard/")
-        except Exception as e:
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        
+        # Authenticate the user using Django's auth framework (using username as email)
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("/user_portal/dashboard/")  # redirect to a homepage or user dashboard after login
+        else:
             return render(
                 request,
                 "user_portal/login.html",
-                {"error_message": "An unexpected error occurred. Please try again."},
+                {"error_message": "Invalid email or password"}
             )
-    return render(
-        request,
-        "user_portal/login.html",
-        {"error_message": "Invalid request method"},
-    )
+    return JsonResponse({"error": "Invalid request method"}, status=405)
