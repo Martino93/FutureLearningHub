@@ -24,7 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls")),
     path("user_portal/", include("user_portal.urls")),
-    path("quiz/", include("quiz.urls")),
+    # path("practicehub/", include("practicehub.urls")),
+    path("practicehub/", include(("practicehub.urls", "practicehub"), namespace="practicehub"))
 ]
 
 # Serve media files during development
