@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+
+{% block navbar %}
+<nav class="bg-gray-800 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-white hover:text-gray-300 transition duration-200">Dashboard</a>
+        <ul class="flex space-x-6">
+            <li><a href="#" class="text-lg text-gray-400 hover:text-gray-300 cursor-not-allowed transition duration-200">Your Profile</a></li>
+            <li><a href="#" class="text-lg text-gray-400 hover:text-gray-300 cursor-not-allowed transition duration-200">Your Progress</a></li>
+            <li><a href="#" class="text-lg text-gray-400 hover:text-gray-300 cursor-not-allowed transition duration-200">Resources</a></li>
+        </ul>
+        <a href="#" class="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition duration-200 shadow-md flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H3zm9.707 5.707a1 1 0 00-1.414-1.414L9 9.586 7.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            Logout
+        </a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+  {% if is_correct %}
+    <h2 style="color: green;">✔️ Correct!</h2>
+  {% else %}
+    <h2 style="color: red;">❌ Incorrect</h2>
+    <p><strong>The correct answer was:</strong> {{ correct_answer }}</p>
+  {% endif %}
+
+  <h3>Rationale:</h3>
+  <p>{{ rationale }}</p>
+
+  <a href="{% url 'practicehub:quiz' %}">
+    <button>Next Question →</button>
+  </a>
+  <a href="{% url 'practicehub:quiz_results' %}" style="margin-left: 10px;">
+    <button>Finish Quiz</button>
+  </a>
+{% endblock %}
