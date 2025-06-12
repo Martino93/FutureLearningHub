@@ -22,3 +22,29 @@ class AquaRatTrain(models.Model):
         
     def __str__(self):
         return f"Question {self.id}: {self.question[:50]}..."
+    
+    
+class UserQuizAttemptDetail(models.Model):
+    """
+    Stores the result for each individual question within a quiz attempt,
+    linking the attempt to the specific question and whether it was answered correctly.
+    """
+    # Foreign key to the overall quiz attempt.
+    attempt = models.ForeignKey(UserQuizAttempt, on_delete=models.CASCADE, related_name="details")
+
+    # Foreign key to the question that was answered.
+    # This now correctly links to your AquaRatTrain model.
+    question = models.ForeignKey(AquaRatTrain, on_delete=models.CASCADE)
+
+    # Boolean to track if the user's answer was correct.
+    is_correct = models.BooleanField()
+
+    class Meta:
+        # Ensures that a question can only appear once per quiz attempt.
+        # This mirrors the UNIQUE constraint in your SQL.
+        unique_together = ('attempt', 'question')
+        verbose_name = "User Quiz Attempt Detail"
+        verbose_name_plural = "User Quiz Attempt Details"
+
+    def __str__(self):
+        return f"Question {self.question.id} in attempt {self.attempt.id} - {'Correct' if self.is_correct else 'Incorrect'}"
