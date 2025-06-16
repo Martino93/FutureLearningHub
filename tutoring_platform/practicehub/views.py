@@ -59,6 +59,7 @@ def submit_answer(request):
     if request.method == 'POST':
         question_id = int(request.POST.get('question_id'))
         selected_option_key = request.POST.get('option')
+        print(f"Selected option key: {selected_option_key}")
 
         # Fetch the correct answer and rationale from Supabase
         supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -73,21 +74,25 @@ def submit_answer(request):
             options = options_data
         
         correct_answer_value = question_details['correct']
+        print(f"Correct answer value: {correct_answer_value}")
+        print(selected_option_key==correct_answer_value)
         
         # Determine if the selected option's value matches the correct answer
-        is_correct = False
-        if isinstance(options, dict):
-            is_correct = (options.get(selected_option_key) == correct_answer_value)
-        elif isinstance(options, list):
-            # Assuming the list contains items with index/label pairs or individual values
-            # Adjust this logic based on your actual data structure
-            try:
-                selected_index = int(selected_option_key)
-                if 0 <= selected_index < len(options):
-                    is_correct = (options[selected_index] == correct_answer_value)
-            except (ValueError, TypeError):
-                # Handle case where selected_option_key isn't a valid index
-                pass
+        is_correct = selected_option_key==correct_answer_value
+        # if isinstance(options, dict):
+        #     is_correct = (options.get(selected_option_key) == correct_answer_value)
+        # elif isinstance(options, list):
+        #     # Assuming the list contains items with index/label pairs or individual values
+        #     # Adjust this logic based on your actual data structure
+        #     try:
+        #         selected_index = int(selected_option_key)
+        #         if 0 <= selected_index < len(options):
+        #             is_correct = (options[selected_index] == correct_answer_value)
+        #     except (ValueError, TypeError):
+        #         # Handle case where selected_option_key isn't a valid index
+        #         pass
+            
+        # print(is_correct)
 
         attempt = UserQuizAttempt.objects.get(id=request.session['attempt_id'])
         if is_correct:
