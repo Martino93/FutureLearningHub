@@ -2,37 +2,230 @@
 {% load static %}
 
 {% block content %}
-<div class="container mx-auto py-16 px-6 text-center">
-    <h1 class="text-4xl font-bold mb-6 text-blue-600">Our Philosophy</h1>
-    <p class="text-lg text-gray-700 mb-8">
-        Discover how we make learning engaging, effective, and futuristic.
-    </p>
-    <div class="flex justify-center mb-12">
-        <img 
-            src="{% static 'core/images/education-philosophy-infographic.svg' %}" 
-            alt="Education Philosophy Infographic" 
-            class="max-w-full h-auto"
-        />
+<!-- Hero Section -->
+<header class="bg-gradient-to-br from-indigo-800 to-purple-900 text-white py-24">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Educational Philosophy</h1>
+      <p class="text-xl text-gray-100 mb-8">
+        Discover how we make learning engaging, effective, and future-focused.
+      </p>
+      <div class="bg-white rounded-xl shadow-xl p-6 text-gray-800">
+        <blockquote class="text-xl italic">
+          "Preparing students not just for the jobs of tomorrow, but for creating the future."
+        </blockquote>
+      </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white shadow-lg rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Personalized Tutoring</h2>
-            <p class="text-gray-600">
-                Tailored lessons to meet individual learning needs and goals.
-            </p>
+  </div>
+</header>
+
+<!-- Mission Statement -->
+<section class="bg-indigo-700 text-white py-6">
+  <div class="container mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold text-center">UNLOCKING POTENTIAL • BUILDING TOMORROW</h2>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Our Educational Approach</h2>
+    
+    <!-- Central Philosophy -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-16 max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="bg-gray-800 rounded-full w-40 h-40 flex-shrink-0 flex items-center justify-center">
+          <h3 class="text-xl font-bold text-white text-center">PERSONALIZED<br>LEARNING</h3>
         </div>
-        <div class="p-6 bg-white shadow-lg rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Interactive Learning</h2>
-            <p class="text-gray-600">
-                Engaging tools and resources to make learning fun and effective.
-            </p>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Core Philosophy</h3>
+          <p class="text-gray-600 mb-4">We believe that every student learns differently. Our approach centers on tailoring education to fit individual needs, learning styles, and interests.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <li class="flex items-center bg-indigo-50 p-3 rounded-lg">
+              <span class="text-indigo-500 mr-2">✦</span> Tailored Learning Paths
+            </li>
+            <li class="flex items-center bg-indigo-50 p-3 rounded-lg">
+              <span class="text-indigo-500 mr-2">✦</span> Individual Pace & Style
+            </li>
+            <li class="flex items-center bg-indigo-50 p-3 rounded-lg md:col-span-2">
+              <span class="text-indigo-500 mr-2">✦</span> Interest-Driven Content
+            </li>
+          </ul>
         </div>
-        <div class="p-6 bg-white shadow-lg rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Future-Ready Skills</h2>
-            <p class="text-gray-600">
-                Preparing students for the challenges of tomorrow with modern skills.
-            </p>
-        </div>
+      </div>
     </div>
-</div>
+
+    <!-- Three Pillars -->
+    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">The Three Pillars</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <!-- Pillar 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:-translate-y-1">
+        <div class="bg-red-600 p-6 text-white">
+          <div class="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center mb-3">
+            <span class="text-red-600 text-xl font-bold text-gray-700">1</span>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-800">Future-Ready Skills</h4>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-3">
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Critical Thinking
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Adaptability
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Digital Fluency
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Complex Problem Solving
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Collaboration
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-red-100 text-red-600 rounded-full flex items-center justify-center">•</span>
+              Ethical Reasoning
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Pillar 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:-translate-y-1">
+        <div class="bg-green-600 p-6 text-white">
+          <div class="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center mb-3">
+            <span class="text-green-600 text-xl font-bold text-gray-700">2</span>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-700">Tech Integration</h4>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-3">
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              AI Diagnostics
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              Gamified Learning
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              Adaptive Content
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              Data-Driven Insights
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              Virtual Learning
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-green-100 text-green-600 rounded-full flex items-center justify-center">•</span>
+              Human-Tech Balance
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Pillar 3 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:-translate-y-1">
+        <div class="bg-purple-600 p-6 text-white">
+          <div class="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center mb-3">
+            <span class="text-purple-600 text-xl font-bold text-gray-700">3</span>
+          </div>
+          <h4 class="text-xl font-bold text-center text-gray-700">Agency Development</h4>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-3">
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Self-Direction
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Goal Setting
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Metacognition
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Intrinsic Motivation
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Executive Function
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span class="w-5 h-5 mr-3 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">•</span>
+              Self-Advocacy
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Results Section - FIXED WHITE TEXT CONTRAST ISSUE -->
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Our Commitment to Results</h3>
+      <div class="bg-orange-800 rounded-t-xl p-6">
+        <h3 class="text-2xl font-bold text-center text-blue">RESULTS-DRIVEN APPROACH</h3>
+        <p class="text-center mt-2 text-white">Delivering measurable outcomes that matter</p>
+      </div>
+      
+      <div class="bg-white rounded-b-xl shadow-lg p-8">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="md:w-1/3">
+            <div class="w-40 h-40 bg-orange-700 rounded-full flex items-center justify-center mx-auto">
+              <h3 class="text-xl font-bold text-white text-center">PROVEN<br>RESULTS</h3>
+            </div>
+          </div>
+          
+          <div class="md:w-2/3">
+            <h4 class="text-2xl font-bold mb-6 text-gray-800">Measurable Outcomes</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-orange-50 rounded-lg p-4 flex items-center">
+                <span class="bg-orange-200 text-orange-800 p-2 rounded-full mr-3 flex-shrink-0 font-bold">✓</span>
+                <span class="text-gray-800">Competency Based</span>
+              </div>
+              <div class="bg-orange-50 rounded-lg p-4 flex items-center">
+                <span class="bg-orange-200 text-orange-800 p-2 rounded-full mr-3 flex-shrink-0 font-bold">✓</span>
+                <span class="text-gray-800">Measurable Growth</span>
+              </div>
+              <div class="bg-orange-50 rounded-lg p-4 flex items-center">
+                <span class="bg-orange-200 text-orange-800 p-2 rounded-full mr-3 flex-shrink-0 font-bold">✓</span>
+                <span class="text-gray-800">Real-World Application</span>
+              </div>
+              <div class="bg-orange-50 rounded-lg p-4 flex items-center">
+                <span class="bg-orange-200 text-orange-800 p-2 rounded-full mr-3 flex-shrink-0 font-bold">✓</span>
+                <span class="text-gray-800">Continuous Feedback</span>
+              </div>
+              <div class="bg-orange-50 rounded-lg p-4 flex items-center md:col-span-2">
+                <span class="bg-orange-200 text-orange-800 p-2 rounded-full mr-3 flex-shrink-0 font-bold">✓</span>
+                <span class="text-gray-800">Evidence-Based Methods</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-indigo-800 text-white py-12">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Ready to Experience Our Approach?</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">Join us and discover how our educational philosophy can transform learning for you or your child.</p>
+    <a href="/user_portal/register/" class="bg-white text-indigo-800 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Get Started Today</a>
+  </div>
+</section>
 {% endblock %}
